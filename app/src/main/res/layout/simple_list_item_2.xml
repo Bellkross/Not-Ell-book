@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="?attr/listPreferredItemHeight"
+    android:mode="twoLine"
+    android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+    android:paddingEnd="?android:attr/listPreferredItemPaddingEnd">
+
+    <TextView android:id="@+id/tvMainInf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textAppearance="?attr/textAppearanceListItem" />
+
+    <TextView android:id="@+id/tvTypeOfInf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvMainInf"
+        android:layout_alignStart="@id/tvMainInf"
+        android:textAppearance="?android:attr/textAppearanceListItemSecondary" />
+
+</ListView>

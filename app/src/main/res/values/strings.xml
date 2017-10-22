@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">BellNotebook</string>
+    <string-array name="contact_information">
+        <item>Number</item>
+        <item>Birthday</item>
+        <item>Additional information</item>
+    </string-array>
+    <string-array name="contact_actions">
+        <item>Share</item>
+        <item>Edit</item>
+        <item>Remove</item>
+    </string-array>
 </resources>
