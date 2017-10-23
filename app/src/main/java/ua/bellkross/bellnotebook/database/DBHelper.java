@@ -1,6 +1,5 @@
 package ua.bellkross.bellnotebook.database;
 
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -75,7 +74,7 @@ public class DBHelper extends SQLiteOpenHelper {
             int numberIndex = cursor.getColumnIndex(NUMBER_TAG);
             int birthdayIndex = cursor.getColumnIndex(BIRTHDAY_TAG);
             int additionalInformationIndex = cursor.getColumnIndex(ADDITIONAL_INFORMATION_TAG);
-            do{
+            do {
                 contacts.add(new Contact(++positionInList,cursor.getInt(contactId), cursor.getString(photoUriIndex),cursor.getString(nameIndex),
                         cursor.getString(surnameIndex), cursor.getString(numberIndex),
                         cursor.getString(birthdayIndex), cursor.getString(additionalInformationIndex)));

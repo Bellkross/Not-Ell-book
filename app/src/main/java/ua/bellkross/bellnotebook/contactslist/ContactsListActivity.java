@@ -35,7 +35,6 @@ public class ContactsListActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +42,10 @@ public class ContactsListActivity extends AppCompatActivity {
 
         initialize();
         if(!correctPositionInList(ArrayListOfContacts.getArrayList())){
-            Log.d(LOG_TAG,"BLYAT, KIRYA, PIZDA, OPYAT ETA HYINYA S INDEXAMI");
+            Log.d(LOG_TAG,"HYINYA S INDEXAMI");
         }
+
+        RecyclerAdapter.getRecyclerAdapter().sort();
 
     }
 
@@ -63,7 +64,6 @@ public class ContactsListActivity extends AppCompatActivity {
 
         DBHelper.getDBHelper(this);
 
-        RecyclerItemOnClickListener.setActivity(this);
         linearLayoutManager = new LinearLayoutManager(this);
         recyclerView = (RecyclerView) findViewById(R.id.rvContacts);
         recyclerView.setLayoutManager(linearLayoutManager);

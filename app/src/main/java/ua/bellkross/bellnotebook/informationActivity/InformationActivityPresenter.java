@@ -35,7 +35,7 @@ public class InformationActivityPresenter {
     private ImageView ivPhoto;
     private TextView tvName, tvSurname;
     private ListView lvContactInformation;
-    private ListView lvCotactActions;
+    private ListView lvContactActions;
     private View.OnClickListener onClickShare;
     private View.OnClickListener onClickEdit;
     private View.OnClickListener onClickRemove;
@@ -79,13 +79,13 @@ public class InformationActivityPresenter {
     private void initializeListViews(){
         initializeOnClickListeners();
         lvContactInformation = (ListView) activity.findViewById(R.id.lvContanctInformation);
-        lvCotactActions = (ListView) activity.findViewById(R.id.lvContactAction);
+        lvContactActions = (ListView) activity.findViewById(R.id.lvContactAction);
 
         final ArrayList<String> actions = new ArrayList<>();
         actions.add("share");
         actions.add("edit");
         actions.add("remove");
-        lvCotactActions.setAdapter(new ArrayAdapter<String>(activity.getApplicationContext(),
+        lvContactActions.setAdapter(new ArrayAdapter<String>(activity.getApplicationContext(),
                 android.R.layout.simple_list_item_1,actions){
             @NonNull
             @Override

@@ -47,7 +47,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
         notifyItemRemoved(posList);
         notifyItemRangeInserted(0, ArrayListOfContacts.getArrayList().size());
 //        notifyDataSetChanged();
-
+    }
+    public void sort(){
+        ArrayListOfContacts.sort();
+        notifyItemRangeInserted(0, ArrayListOfContacts.getArrayList().size());
     }
 
     @Override
