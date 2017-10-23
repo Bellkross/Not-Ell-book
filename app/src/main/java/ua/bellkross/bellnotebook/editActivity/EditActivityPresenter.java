@@ -16,6 +16,7 @@ import ua.bellkross.bellnotebook.contactslist.RecyclerAdapter;
 import ua.bellkross.bellnotebook.informationActivity.InformationActivity;
 import ua.bellkross.bellnotebook.model.Contact;
 
+import static ua.bellkross.bellnotebook.model.Constants.EMPTY_URI;
 import static ua.bellkross.bellnotebook.model.Constants.ID_TAG;
 import static ua.bellkross.bellnotebook.model.Constants.POSITION_IN_LIST_TAG;
 
@@ -60,7 +61,7 @@ public class EditActivityPresenter implements View.OnClickListener {
         ivPhoto.setOnClickListener(this);
         btnOk.setOnClickListener(this);
         btnAdd.setOnClickListener(this);
-        if (!add&&!contact.getPhotoUri().equalsIgnoreCase("nouri"))
+        if (!add&&!contact.getPhotoUri().equalsIgnoreCase(EMPTY_URI))
             ivPhoto.setImageURI(Uri.parse(contact.getPhotoUri()));
         else
             ivPhoto.setImageDrawable(activity.getDrawable(R.drawable.nophoto));

@@ -131,7 +131,7 @@ public class InformationActivityPresenter {
                 TextView text2 = (TextView) view.findViewById(android.R.id.text2);
                 text1.setTextColor(Color.BLACK);
                 text1.setText(information.get(positionInList));
-                text2.setTextColor(Color.WHITE);
+                text2.setTextColor(Color.GRAY);
                 text2.setText(informationType.get(positionInList));
                 return view;
             }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/infbg"
+    android:background="#fafafa"
     tools:context="ua.bellkross.bellnotebook.informationActivity.InformationActivity">
 
     <ImageView
@@ -17,7 +17,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@android:color/holo_green_light" />
+        app:srcCompat="@drawable/nophoto" />
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_information_activity"
@@ -44,7 +44,7 @@
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="16dp"
         android:text="Name"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/glPhoto"
@@ -58,7 +58,7 @@
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="8dp"
         android:text="Surname"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/glPhoto"
@@ -80,6 +80,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="0dp"
+        android:background="@android:color/transparent"
         android:entries="@array/contact_actions"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -95,6 +96,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:background="@android:color/transparent"
         android:divider="@drawable/divider"
         android:dividerHeight="1px"
         android:entries="@array/contact_information"
