@@ -16,6 +16,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.jar.Attributes;
 
 import ua.bellkross.bellnotebook.R;
 import ua.bellkross.bellnotebook.contactslist.ContactsListActivity;
@@ -141,7 +142,13 @@ public class InformationActivityPresenter {
         onClickShare = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(LOG_TAG,"share");
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                String shareBody = name + " " + surname + '\n' +
+                        "number: " + number + '\n' +
+                        "birthday: " + birthday;
+                intent.putExtra(Intent.EXTRA_TEXT,shareBody);
+                activity.startActivity(Intent.createChooser(intent, "Bell sharing"));
             }
         };
 

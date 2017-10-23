@@ -62,7 +62,7 @@ public class ContactsListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        DBHelper.getDBHelper(this);
+        DBHelper.getDBHelper(this.getApplicationContext());
 
         linearLayoutManager = new LinearLayoutManager(this);
         recyclerView = (RecyclerView) findViewById(R.id.rvContacts);
