@@ -30,7 +30,8 @@ import static ua.bellkross.bellnotebook.model.Constants.EMPTY_URI;
 import static ua.bellkross.bellnotebook.model.Constants.LOG_TAG;
 import static ua.bellkross.bellnotebook.model.Constants.NEW_ELEMENT;
 
-public class ContactsListActivity extends AppCompatActivity {
+public class
+ContactsListActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private RecyclerView recyclerView;

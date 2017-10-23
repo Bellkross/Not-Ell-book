@@ -19,6 +19,7 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
     private ImageView ivContactIcon;
     private TextView tvName;
     private TextView tvSurname;
+    private TextView tvAbout;
 
     public RecyclerViewHolder(final View itemView) {
         super(itemView);
@@ -26,6 +27,7 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         ivContactIcon = (ImageView) itemView.findViewById(R.id.ivContactIcon);
         tvName = (TextView) itemView.findViewById(R.id.tvContactName);
         tvSurname = (TextView) itemView.findViewById(R.id.tvContactSurname);
+        tvAbout = (TextView) itemView.findViewById(R.id.tvContactAbout);
     }
 
     public void bind(Contact contact) {
@@ -34,5 +36,6 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         }
         tvName.setText(contact.getName());
         tvSurname.setText(contact.getSurname());
+        tvAbout.setText(contact.getAdditionalInformation());
     }
 }
