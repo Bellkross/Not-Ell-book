@@ -34,13 +34,12 @@ public class EditActivityPresenter implements View.OnClickListener {
     private EditText etAdditionalInformation;
     private Button btnOk;
     private Button btnAdd;
-    private Button btnBack;
     private boolean add;
 
     public EditActivityPresenter(Activity activity, Contact contact, ImageView ivPhoto,
                                  EditText etName, EditText etSurname, EditText etNumber,
                                  EditText etBirthday, EditText etAdditionalInformation,
-                                 Button btnOk, Button btnAdd, Button btnBack, boolean add) {
+                                 Button btnOk, Button btnAdd, boolean add) {
         this.activity = activity;
         this.positionInDatabase = activity.getIntent().getIntExtra(ID_TAG,-1);
         this.positionInList = activity.getIntent().getIntExtra(POSITION_IN_LIST_TAG,-1);
@@ -53,7 +52,6 @@ public class EditActivityPresenter implements View.OnClickListener {
         this.etAdditionalInformation = etAdditionalInformation;
         this.btnOk = btnOk;
         this.btnAdd = btnAdd;
-        this.btnBack = btnBack;
         this.add = add;
         initializeViews();
     }
@@ -62,7 +60,6 @@ public class EditActivityPresenter implements View.OnClickListener {
         ivPhoto.setOnClickListener(this);
         btnOk.setOnClickListener(this);
         btnAdd.setOnClickListener(this);
-        btnBack.setOnClickListener(this);
         if (!add&&!contact.getPhotoUri().equalsIgnoreCase("nouri"))
             ivPhoto.setImageURI(Uri.parse(contact.getPhotoUri()));
         else
@@ -101,19 +98,6 @@ public class EditActivityPresenter implements View.OnClickListener {
                 Intent intentAdd = new Intent(activity, ContactsListActivity.class);
                 intentAdd.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 activity.startActivity(intentAdd);
-                break;
-            case R.id.btnBack:
-                if (add) {
-                    Intent intent = new Intent(activity, ContactsListActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    activity.startActivity(intent);
-                } else {
-                    Intent intent = new Intent(activity, InformationActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    intent.putExtra(POSITION_IN_LIST_TAG, positionInList);
-                    intent.putExtra(ID_TAG, positionInDatabase);
-                    activity.startActivity(intent);
-                }
                 break;
             case R.id.btnOk:
                 contact.setName(etName.getText().toString());
